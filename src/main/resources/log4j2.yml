@@ -1,0 +1,26 @@
+appenders: console, file
+appender:
+  console:
+    type: Console
+    name: STDOUT
+    layout:
+      type: PatternLayout
+      pattern: "[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n"
+
+appender.file:
+  type: File
+  name: File
+  fileName: app.log
+  layout.type: PatternLayout
+  layout.pattern: "[%-5level] %d{dd-MM-yyyy HH:mm:ss.SSS} [%t] %c{1} - %msg%n"
+
+rootLogger:
+  level: INFO
+  appenderRefs: stdout
+  appenderRef.stdout.ref: STDOUT
+  appenderRef.file.ref: File
+
+logger:
+  hibernate:
+    name: "org.hibernate.SQL"
+    level: DEBUG
