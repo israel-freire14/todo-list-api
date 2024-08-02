@@ -1,0 +1,8 @@
+springfox:
+  documentation:
+    swagger:
+      v2:
+        host: "http//localhost:8080/tasks"
+        pattern: "/swagger-ui.html"
+        basepath: "/v2/api-docs"
+
